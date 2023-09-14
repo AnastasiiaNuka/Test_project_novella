@@ -1,8 +1,10 @@
-John "Hello World!" list(items -f long), playSong("Intro Song" -v 1)
+Ann: "Hello!"{c}
+"is anyone here?!..{a} Oooow? {wa 0.5} {a} Where is everyone?"
 
-setScene("Classroom" -s 5.5)
+ Ella: "I`m here!{wc 1} Goooood morning, Dear!{a} What`s happening?"
 
-World "Hello, \"Quote Here\" right back at you!"
+ Ann:"Good morning, Ella!"
 
+narrator "Narrator is speaking now."
+"Narrator is continuing to speak"
 
-narrator "And so ended the traditional 'Hello World' conversation." PlaySong (End, -p 0.5), list(players), saveGame(1-g all -f simple)

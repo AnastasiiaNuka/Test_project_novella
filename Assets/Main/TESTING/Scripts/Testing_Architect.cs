@@ -11,14 +11,15 @@ namespace TESTING
         TextArchitect architect;
         public TextArchitect.BuildMethod bm = TextArchitect.BuildMethod.instant;
 
-        string[] lines = new string[5]
-        {
-            "Randome line! ",
-            "Say smthing... ",
-            "Hello world! ",
-            "Its a new day... ",
-            "I can by myself flowers! "
-        };
+        //string[] lines = new string[5]
+        //{
+        //    "Randome line! ",
+        //    "Say smthing... ",
+        //    "Hello world! ",
+        //    "Its a new day... ",
+        //    "I can by myself flowers! "
+        //};
+
         void Start()
         {
             ds = DialogueSystem.instance;

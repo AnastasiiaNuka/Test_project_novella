@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System;
 
-public class NameContainer : MonoBehaviour
+namespace DIALOGUE
 {
-    [SerializeField] private GameObject root;
-    [SerializeField] private TextMeshProUGUI nameText;
-
-    public void Show(string nameToShow = "")
+    [Serializable]
+    public class NameContainer
     {
-        root.SetActive(true);
+        [SerializeField] private GameObject root;
+        [SerializeField] private TextMeshProUGUI nameText;
 
-        if (nameToShow != string.Empty)
-            nameText.text = nameToShow;
+        public void Show(string nameToShow = "")
+        {
+            root.SetActive(true);
 
-    }
+            if (nameToShow != string.Empty)
+                nameText.text = nameToShow;
+        }
 
-    public void Hide()
-    {
-        root.SetActive(false);
+        public void Hide()
+        {
+            root.SetActive(false);
+        }
     }
 }

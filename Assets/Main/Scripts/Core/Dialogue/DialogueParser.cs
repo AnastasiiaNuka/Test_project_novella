@@ -8,7 +8,7 @@ namespace DIALOGUE
 {
     public class DialogueParser
     {
-        private const string commandRegexPattern = "\\w*[^\\s]\\(";
+        private const string commandRegexPattern = @"\w*[^\s]\(";
         public static Dialogue_Line Parse(string rawline)
         {
             Debug.Log($"Parsing line - '{rawline}'");

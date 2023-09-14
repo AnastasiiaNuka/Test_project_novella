@@ -6,14 +6,35 @@ using System.IO;
 
 public class TestDialogueFiles : MonoBehaviour
 {
-    //void Start()
-    //{
-    //    StartConversation();
-    //    //List<string> lines = FileManager.ReadTextAsset("testFile"); //e03-pt2
-    //}
+    [SerializeField] private TextAsset fileToRead = null;
 
-    //void StartConversation()
-    //{
+    void Start()
+    {
+        StartConversation();
+    }
+
+    void StartConversation()
+    {
+        List<string> lines = FileManager.ReadTextAsset(fileToRead);
+        //for (int i = 0; i < lines.Count; i++)
+        //{
+        //    string line = lines[i];
+        //    if (string.IsNullOrWhiteSpace (line)) continue;
+
+        //    Dialogue_Line dl = DialogueParser.Parse(line);
+
+        //    Debug.Log($"{dl.speaker.name} as [{(dl.speaker.castName != string.Empty ? dl.speaker.castName : dl.speaker.name)}]at {dl.speaker.castPosition}");
+
+        //    List<(int l, string ex)> expr = dl.speaker.CastExpression;
+        //    for (int c = 0; c < expr.Count; c++)
+        //    {
+        //        Debug.Log($"[Layer[{expr[c].l}) = '{expr[c].ex}']");
+        //    }
+        //}
+
+        DialogueSystem.instance.Say(lines);
+    }
+
     //    List<string> lines = new List<string>();
 
     //    using (StreamReader reader = new StreamReader(FilePaths.dialoguePath))
