@@ -6,14 +6,14 @@ using UnityEngine;
 
 namespace DIALOGUE
 {
-    public class DialogueParser
+    public class DialogueParser //парсит строки диалогов из сценария (текстового файла)
     {
-        private const string commandRegexPattern = @"\w*[^\s]\(";
+        private const string commandRegexPattern = @"[\w\[\]]*[^\s]\(";
         public static Dialogue_Line Parse(string rawline)
         {
-            Debug.Log($"Parsing line - '{rawline}'");
+            //Debug.Log($"Parsing line - '{rawline}'");
             (string speaker, string dialogue, string commands) = RipContent(rawline);
-            Debug.Log($"Speaker = '{speaker}'\nDialogue = '{dialogue}'\nCommands = '{commands}'");
+            //Debug.Log($"Speaker = '{speaker}'\nDialogue = '{dialogue}'\nCommands = '{commands}'");
 
             return new Dialogue_Line(speaker, dialogue, commands);
 
@@ -42,7 +42,7 @@ namespace DIALOGUE
                 else
                     isEscaped = false;
             }
-            //Identify Command Pattern
+
             Regex commandRegex = new Regex(commandRegexPattern);
             Match match = commandRegex.Match(rawline);
             int commandStart = -1;
@@ -55,7 +55,7 @@ namespace DIALOGUE
             }
 
             if (dialogueStart != -1 && dialogueEnd != -1 && (commandStart == -1 || commandStart > dialogueEnd))
-            { //we know that we have valid dialogue
+            {
                 speaker = rawline.Substring(0, dialogueStart).Trim();
                 dialogue = rawline.Substring(dialogueStart + 1, dialogueEnd - dialogueStart - 1).Replace("\\\"", "\"");
 

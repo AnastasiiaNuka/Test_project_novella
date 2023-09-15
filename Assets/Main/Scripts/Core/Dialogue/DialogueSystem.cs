@@ -6,13 +6,13 @@ using DIALOGUE;
 
 namespace DIALOGUE
 {
-    public class DialogueSystem : MonoBehaviour
+    public class DialogueSystem : MonoBehaviour // центральная часть диалоговой системы, отвечающая за управление отображением диалогов и имен 
     {
         public DialogueContainer dialogueContainer = new DialogueContainer();
         private ConversationManager conversationManager;
         private TextArchitect architect;
 
-        public static DialogueSystem instance { get; private set; } 
+        public static DialogueSystem instance { get; private set; }
 
         public delegate void DialogueSystemEvent();
         public event DialogueSystemEvent _onUserPrompt_Next;
@@ -39,7 +39,7 @@ namespace DIALOGUE
             conversationManager = new ConversationManager(architect);
         }
 
-        public  void OnUserPrompt_Next()
+        public void OnUserPrompt_Next()
         {
             _onUserPrompt_Next?.Invoke();
         }

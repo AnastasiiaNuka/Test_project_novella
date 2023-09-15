@@ -26,7 +26,7 @@ public class TestFiles : MonoBehaviour //Final. Класс отвечает за разделение тек
 
             Dialogue_Line dl = DialogueParser.Parse(line);
 
-            Debug.Log(dl.dialogue);
+            Debug.Log(dl.dialogueData);
         }
     }
 }

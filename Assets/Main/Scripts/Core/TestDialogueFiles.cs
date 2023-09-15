@@ -4,7 +4,7 @@ using UnityEngine;
 using DIALOGUE;
 using System.IO;
 
-public class TestDialogueFiles : MonoBehaviour
+public class TestDialogueFiles : MonoBehaviour //демонстрация чтения текстового файла с диалогами, используя TextAsset, запускает диалоговую систему для обработки строк. 
 {
     [SerializeField] private TextAsset fileToRead = null;
 

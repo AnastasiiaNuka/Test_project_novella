@@ -6,7 +6,7 @@ using System;
 namespace DIALOGUE
 {
     [Serializable]
-    public class DialogueContainer
+    public class DialogueContainer //управление отображением текстом в диалогах
     {
         public GameObject root;
         public NameContainer nameContainer; //имя героя 

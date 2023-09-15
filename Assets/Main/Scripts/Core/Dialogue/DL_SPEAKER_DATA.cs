@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-public class DL_SPEAKER_DATA
+public class DL_SPEAKER_DATA //обработка информации о диалоговом персонаже(извлекает из текста данные о имени, позиции). Данные хранятся в полях класса
 {
     public string name, castName;
-    public string displayname =>(castName!=string.Empty? castName:name);
+    public string displayname => (castName != string.Empty ? castName : name);
 
     public Vector2 castPosition;
     public List<(int layer, string expression)> CastExpression { get; set; }
@@ -20,19 +20,19 @@ public class DL_SPEAKER_DATA
     private const char AXISDELIMITER = ':';
     public DL_SPEAKER_DATA(string rawSpeaker)
     {
-        string pattern = @$"{NAMECAST_ID} | {POSITIONCAST_ID}| {EXPRESSIONCAST_ID.Insert(EXPRESSIONCAST_ID.Length-1, @"\")}";
+        string pattern = @$"{NAMECAST_ID} | {POSITIONCAST_ID}| {EXPRESSIONCAST_ID.Insert(EXPRESSIONCAST_ID.Length - 1, @"\")}";
         MatchCollection matches = Regex.Matches(rawSpeaker, pattern);
-        //populate this data to avoid null references to values
+
         castName = "";
         castPosition = Vector2.zero;
         CastExpression = new List<(int layer, string expression)>();
-        //if there are no matches then this entire line is the speaker name
+
         if (matches.Count == 0)
         {
             name = rawSpeaker;
             return;
         }
-        // Otherwise, isolate the speakername from the casting data
+
         int index = matches[0].Index;
 
         name = rawSpeaker.Substring(0, index);
@@ -61,11 +61,11 @@ public class DL_SPEAKER_DATA
                     float.TryParse(axis[1], out castPosition.y);
 
             }
-            else  if (match.Value == EXPRESSIONCAST_ID)
+            else if (match.Value == EXPRESSIONCAST_ID)
             {
                 startIndex = match.Index + EXPRESSIONCAST_ID.Length;
                 endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
-                string castExp = rawSpeaker.Substring(startIndex, endIndex - (startIndex +1));
+                string castExp = rawSpeaker.Substring(startIndex, endIndex - (startIndex + 1));
 
                 CastExpression = castExp.Split(EXPRESSIONLAYER_JOINER)
                  .Select(x =>

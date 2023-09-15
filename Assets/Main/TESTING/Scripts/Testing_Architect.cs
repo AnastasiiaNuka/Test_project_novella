@@ -53,12 +53,12 @@ namespace TESTING
                 }
                 else
                     architect.Build(longLine);
-                //architect.Build(lines[Random.Range(0, lines.Length)]);
+                
             }
             else if (Input.GetKeyDown(KeyCode.A))
             {
                 architect.Append(longLine);
-                //architect.Append(lines[Random.Range(0, lines.Length)]);
+                
             }
 
         }

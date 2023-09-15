@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class TextArchitect
+public class TextArchitect //Класс содержит методы для построения текста в режимах instant (мгновенно), typewriter (постепенное появление, как при наборе на печатной машинке) и fade (постепенное появление с плавным затуханием).
 {
     private TextMeshProUGUI tmpro_ui;
     private TextMeshPro tmpro_world;
@@ -53,7 +53,7 @@ public class TextArchitect
         return buildProcess;
     }
 
-    public Coroutine Append(string text) //append text to what is already in the text architect
+    public Coroutine Append(string text)
     {
         preText = tmpro.text;
         targetText = text;

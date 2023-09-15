@@ -7,7 +7,7 @@ using System;
 namespace DIALOGUE
 {
     [Serializable]
-    public class NameContainer
+    public class NameContainer //управление отображением имени персонажа в диалогах.
     {
         [SerializeField] private GameObject root;
         [SerializeField] private TextMeshProUGUI nameText;

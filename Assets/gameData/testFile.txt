@@ -1,10 +1,11 @@
-Ann: "Hello!"{c}
-"is anyone here?!..{a} Oooow? {wa 0.5} {a} Where is everyone?"
 
- Ella: "I`m here!{wc 1} Goooood morning, Dear!{a} What`s happening?"
 
- Ann:"Good morning, Ella!"
+Anastasiia "Welcome! Press SPACE to continue..." moveCharDemo(left) 
 
-narrator "Narrator is speaking now."
-"Narrator is continuing to speak"
+Anastasiia "Hello Everyone!" {a} 
+
+Anastasiia "I`m Junior Unity Developer..."{wa 1} "And I am pleased to present to you my test assignment!  
+Anastasiia "Even though I don't have much experience, {a} I was insanely excited to work on this project!"
+Anastasiia "If you find potential in me,{a} I would intresting to develop in this gaming direction!"
+
 
